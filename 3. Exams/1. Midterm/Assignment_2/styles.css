@@ -132,15 +132,7 @@ nav ul li a {
     
 }
 
-.nav-icons {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .nav-icons a {
-    text-decoration: none;
-    color: #333;
-  }
+
 
 .hero {
     background-color: #f4f4f4;
