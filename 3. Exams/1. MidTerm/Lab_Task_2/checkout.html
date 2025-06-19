@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Grenson | British Designer Shoes</title>
+</head>
+<body>
+    <header>
+        <h3 id="announce"> ALL DUTIES PAID ON INTERNATIONAL ORDERS </h3>
+        <nav>
+            <ul>
+                <li><a href="#">NEW IN</a></li>
+                <li><a href="#">SHOP MEN'S</a></li>
+                <li><a href="#">SHOP WOMEN'S</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+                
+                <div class="logo"> <a href="checkout.html">
+                    <img src="./assets/Logo.png" width="250" title="GRENSON" alt="GRENSON LOGO">
+                </a></div>
+
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">OUR STORE</a></li>
+                <li><a href="#">GOOD NEWS</a></li>
+                
+            </ul>
+            <div class="nav-icons">
+                <a href="#">Search</a>
+                <a href="#">Cart</a>
+            </div>
+        </nav>
+       
+    </header>
+    <div class="container">
+        <h2>Checkout</h2>
+        <form id="checkoutForm" novalidate>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required pattern="^[A-Za-z\s]+$">
+            <span class="error-message"></span>
+          </div>
+    
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error-message"></span>
+          </div>
+    
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required pattern="^\d{10,15}$">
+            <span class="error-message"></span>
+          </div>
+    
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" required></textarea>
+            <span class="error-message"></span>
+          </div>
+    
+          <div class="form-group">
+            <label for="cardNumber">Credit Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" required pattern="^\d{16}$" maxlength="16">
+            <span class="error-message"></span>
+          </div>
+    
+          <div class="form-group">
+            <label for="expiry">Expiry Date</label>
+            <input type="month" id="expiry" name="expiry" required>
+            <span class="error-message"></span>
+          </div>
+    
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required pattern="^\d{3}$" maxlength="3">
+            <span class="error-message"></span>
+          </div>
+    
+          <button type="submit">Place Order</button>
+        </form>
+    
+        <div id="successMessage" class="success-message" style="display: none;">
+          Order placed successfully!
+        </div>
+      </div>
+    
+      <script src="script.js"></script>
+    </body>
+    </html>
