@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<div class="container mt-4">
+  <h2>Edit Vehicle</h2>
+  <form action="/vehicles/admin/<%= vehicle._id %>" method="POST" enctype="multipart/form-data">
+    <input class="form-control mb-2" name="name" value="<%= vehicle.name %>" required>
+    <input class="form-control mb-2" name="brand" value="<%= vehicle.brand %>" required>
+    <input class="form-control mb-2" name="price" type="number" value="<%= vehicle.price %>" required>
+    <input class="form-control mb-2" name="type" value="<%= vehicle.type %>" required>
+    <input class="form-control mb-2" name="image" type="file" accept="image/*">
+    <button class="btn btn-primary">Update</button>
+  </form>
+
+  <form action="/vehicles/admin/<%= vehicle._id %>/delete" method="POST" class="mt-2">
+    <button class="btn btn-danger">Delete</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>

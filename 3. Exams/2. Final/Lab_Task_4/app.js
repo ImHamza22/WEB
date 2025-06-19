@@ -52,3 +52,37 @@ server.listen(4000, () => {
 });
 
 module.exports = server;
+
+
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('passport');
+const flash = require('connect-flash');
+const vehicleRoutes = require('./routes/vehicles');
+
+// MongoDB connection
+mongoose.connect('mongodb://127.0.0.1:27017/ecommerce', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
+app.use(session({ secret: 'secret', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+app.set('view engine', 'ejs');
+
+// Use routes
+app.use('/vehicles', vehicleRoutes);
+
+// Dummy home route
+app.get('/', (req, res) => res.redirect('/vehicles'));
+
+// Start server
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));

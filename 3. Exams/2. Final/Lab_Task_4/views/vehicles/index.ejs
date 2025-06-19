@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<div class="container mt-4">
+  <h2>All Vehicles</h2>
+  <div class="row">
+    <% vehicles.forEach(vehicle => { %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="/uploads/vehicles/<%= vehicle.image %>" class="card-img-top">
+          <div class="card-body">
+            <h5><%= vehicle.name %></h5>
+            <p><%= vehicle.brand %> | <%= vehicle.type %></p>
+            <p>$<%= vehicle.price %></p>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('../partials/footer') %>

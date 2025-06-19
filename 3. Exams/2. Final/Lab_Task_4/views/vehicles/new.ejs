@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<div class="container mt-4">
+  <h2>Add New Vehicle</h2>
+  <form action="/vehicles/admin" method="POST" enctype="multipart/form-data">
+    <input class="form-control mb-2" name="name" placeholder="Name" required>
+    <input class="form-control mb-2" name="brand" placeholder="Brand" required>
+    <input class="form-control mb-2" name="price" type="number" placeholder="Price" required>
+    <input class="form-control mb-2" name="type" placeholder="Type (SUV, Sedan, etc.)" required>
+    <input class="form-control mb-2" name="image" type="file" accept="image/*">
+    <button class="btn btn-success">Add Vehicle</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>
