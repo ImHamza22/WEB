@@ -1,0 +1,27 @@
+<main class="container my-5">
+  <h2>Your Orders</h2>
+
+  <% if (orders.length === 0) { %>
+    <p>No orders yet.</p>
+  <% } else { %>
+    <% orders.forEach(order => { %>
+      <div class="card mb-4">
+        <div class="card-header">
+          <strong>Order ID:</strong> <%= order._id %> |
+          <strong>Date:</strong> <%= order.createdAt.toDateString() %> |
+          <strong>Total:</strong> PKR <%= order.total.toFixed(2) %>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <% order.items.forEach(item => { %>
+              <li class="list-group-item d-flex justify-content-between">
+                <span><%= item.name %> x <%= item.quantity %></span>
+                <span>PKR <%= (item.price * item.quantity).toFixed(2) %></span>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    <% }) %>
+  <% } %>
+</main>

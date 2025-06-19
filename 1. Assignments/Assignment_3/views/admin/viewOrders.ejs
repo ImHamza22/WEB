@@ -1,0 +1,55 @@
+<div class="app-wrapper">
+  <div class="app-content pt-3 p-md-3 p-lg-4">
+    <div class="container-xl">
+
+      <div class="row g-3 mb-4 align-items-center justify-content-between">
+        <div class="col-auto">
+          <h1 class="app-page-title mb-0">Orders</h1>
+        </div>
+      </div>
+
+      <div class="tab-content" id="orders-table-tab-content">
+        <div class="tab-pane fade show active" id="orders-all" role="tabpanel">
+          <div class="app-card app-card-orders-table shadow-sm mb-5">
+            <div class="app-card-body">
+              <div class="table-responsive">
+                <table class="table app-table-hover mb-0 text-left">
+                  <thead>
+                    <tr>
+                      <th class="cell">Order ID</th>
+                      <th class="cell">Customer</th>
+                      <th class="cell">Items</th>
+                      <th class="cell">Date</th>
+                      <th class="cell">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% orders.forEach(order => { %>
+                      <tr>
+                        <td class="cell"><%= order._id %></td>
+                        <td class="cell"><%= order.userName %></td>
+                        <td class="cell">
+                          <ul class="mb-0">
+                            <% order.items.forEach(item => { %>
+                              <li><%= item.name %> x <%= item.quantity %></li>
+                            <% }) %>
+                          </ul>
+                        </td>
+                        <td class="cell">
+                          <%= new Date(order.createdAt).toLocaleDateString() %><br>
+                          <small><%= new Date(order.createdAt).toLocaleTimeString() %></small>
+                        </td>
+                        <td class="cell">Rs. <%= order.total %></td>
+                      </tr>
+                    <% }) %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div><!--//tab-pane-->
+      </div><!--//tab-content-->
+
+    </div><!--//container-fluid-->
+  </div><!--//app-content-->
+</div><!--//app-wrapper-->

@@ -1,0 +1,32 @@
+<main class="container py-5">
+  <h2 class="mb-4 text-center">My Complaints</h2>
+
+  <% if (complaints.length === 0) { %>
+    <div class="alert alert-info text-center">
+      You have not submitted any complaints yet.
+    </div>
+  <% } else { %>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle shadow-sm">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Order ID</th>
+            <th scope="col">Message</th>
+            <th scope="col">Date Submitted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% complaints.forEach((complaint, index) => { %>
+            <tr>
+              <th scope="row"><%= index + 1 %></th>
+              <td><%= complaint.orderId %></td>
+              <td><%= complaint.message %></td>
+              <td><%= complaint.createdAt.toLocaleString() %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</main>

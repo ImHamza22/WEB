@@ -1,0 +1,49 @@
+@media only screen  and (max-width:992px){
+    .nav-menu-btn{
+        position: relative;
+        top: 3;
+        left: 0;
+        border: 0px;
+    }
+    .navbar-brand{
+        width: 80%;
+        text-align: center;
+    }
+    .sec-2 img {
+        height: 90%;
+    }
+    .sec-2 a {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width:575px) and (max-width:992px){
+    .sec-1-content {
+        top: 40%;
+    }
+    .sec-1-content h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width:575px){
+    .mobile-menu {
+        width: 100% !important;
+    }
+    .sec-1-content {
+        top: 30%;
+    }
+    .sec-1-content h2 {
+        font-size: 2rem;
+    }
+    .sec-1-content p {
+        font-size: 0.9rem;
+    }
+    .sec-1-content a {
+        display: flex;
+        padding: 8px 15px;
+    }
+    .h-large{
+        font-size: 1.3rem;
+    }
+}

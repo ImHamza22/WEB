@@ -1,0 +1,111 @@
+<style>
+  .error-msg {
+    color: red;
+    font-size: 14px;
+    display: none;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(function () {
+    $("#eDate").attr("min", new Date().toISOString().split("T")[0]);
+
+    let form = $("#myForm");
+    form.on("submit", function (event) {
+      event.preventDefault();
+      let isValid = true;
+
+      const fields = [
+        { id: "#fname", error: "#fnameError" },
+        { id: "#email", error: "#emailError" },
+        { id: "#password", error: "#passwordError" },
+        { id: "#phnNum", error: "#phnError" },
+        { id: "#address", error: "#addressError" },
+        { id: "#ccNum", error: "#ccError" },
+        { id: "#cvv", error: "#cvvError" },
+        { id: "#eDate", error: "#edError" },
+      ];
+
+      fields.forEach(field => {
+        const input = $(field.id)[0];
+        if (!input) return;
+
+        if (!input.checkValidity()) {
+          $(field.error).show();
+          isValid = false;
+        } else {
+          $(field.error).hide();
+        }
+      });
+
+      if (isValid) {
+        const formData = form.serialize();
+        $.post("/order/place-order", formData)
+          .done(function () {
+            window.location.href = "/order/orderConfirmation";
+          })
+          .fail(function () {
+            alert("Something went wrong while placing your order.");
+          });
+      }
+    });
+  });
+</script>
+
+
+
+<main class="container my-5">
+  <section class="form-container">
+    <div class="container">
+      <form action="" class="row g-3" id="myForm" novalidate>
+        <h1 class="text-center">Checkout</h1>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="fname" placeholder="Your Name" pattern="^[A-Za-z\s]+$" required>
+          <label for="fname">Full Name</label>
+          <span class="error-msg" id="fnameError">Name must be non-empty alphabatic.</span>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+          <label for="email">Email address</label>
+          <span class="error-msg" id="emailError">Enter a valid email address.</span>
+        </div>
+        <div class="input-group mb-3">
+          <div class="form-floating">
+            <input type="number" class="form-control" id="phnNum" placeholder="Phone Number" pattern="[0-9]"
+              minlength="10" maxlength="10" required>
+            <label for="phnNum">Phone number</label>
+            <span class="error-msg" id="phnError">Phone Number must be numeric 10 digits.</span>
+          </div>
+        </div>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Your complete address" id="address" required></textarea>
+          <label for="address">Address</label>
+          <span class="error-msg" id="addressError">Address is required.</span>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" id="ccNum" placeholder="Credit Number" pattern="[0-9]"
+            minlength="15" maxlength="16" required>
+          <label for="cNum">Credit card number</label>
+          <span class="error-msg" id="ccError">Must be 16 digits, only numbers allowed.</span>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="date" class="form-control" id="eDate" placeholder="" required>
+          <label for="eDate">Expiry Date</label>
+          <span class="error-msg" id="edError">Must be a valid future date.</span>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" id="cvv" placeholder="CVV" pattern="[0-9]" minlength="3"
+            maxlength="3" required>
+          <label for="cvv">CVV</label>
+          <span class="error-msg" id="cvvError">Must be exactly 3 digits.</span>
+        </div>
+        <div class="col-12">
+          <a href="/cart" class="btn btn-danger btn-lg">Cancel</a>
+          <button class="btn btn-primary btn-lg" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+

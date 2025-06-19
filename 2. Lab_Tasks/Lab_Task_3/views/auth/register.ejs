@@ -1,0 +1,72 @@
+<style>
+    .bg-site {
+        background-color: #f8f7ed !important;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+            <div class="card shadow-sm">
+                <div class="card-header text-center bg-site">
+                    <h3 class="mb-0">Register</h3>
+                </div>
+                <div class="card-body">
+
+                    <% if (error) { %>
+                        <div class="alert alert-danger">
+                            <%= error %>
+                        </div>
+                    <% } %>
+
+                    <form method="POST" action="/user/register">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name" 
+                                class="form-control" 
+                                value="<%= typeof old !== 'undefined' ? old.name : '' %>" 
+                                required>
+                           
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                id="email" 
+                                class="form-control" 
+                                value="<%= typeof old !== 'undefined' ? old.email : '' %>" 
+                                required>
+                           
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password" 
+                                class="form-control" 
+                                required>
+                            
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center bg-site">
+                    <p class="mb-0">
+                        Already have an account? <a href="/user/login">Login</a>
+                    </p>
+                </div>
+            </div>
+            <p class="py-3"><a href="/">Go back home</a></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="app-wrapper">
+  <div class="app-content pt-3 p-md-3 p-lg-4">
+    <div class="container-xl">
+
+      <% for (let category in productsByCategory) { %>
+        <div class="mb-4">
+          <h3 class="fw-bold my-5"><%= category %></h3>
+
+          <div class="app-card app-card-basic shadow-sm p-4">
+            <div class="app-card-body">
+              <div class="row g-4">
+
+                <% productsByCategory[category].forEach(product => { %>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                      <a href="/admin/products/edit/<%= product._id %>" class="text-decoration-none text-dark">
+                        <img src="/images/products/<%= product.image %>" class="card-img-top rounded" alt="<%= product.name %>">
+                        <div class="card-body text-center">
+                          <h6 class="card-title mb-1"><%= product.name %></h6>
+                          <small class="text-primary">Edit</small>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                <% }); %>
+
+              </div> <!--//row-->
+            </div> <!--//app-card-body-->
+          </div> <!--//app-card-->
+        </div>
+      <% } %>
+
+    </div><!--//container-xl-->
+  </div><!--//app-content-->
+</div><!--//app-wrapper-->

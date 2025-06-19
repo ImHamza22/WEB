@@ -1,0 +1,51 @@
+<section class="sec-1">
+    <img src="images/WINTER-ESSENTIALS-BANNER.png" alt="" class="">
+    <div class="container sec-1-content px-5">
+        <h2>Warm winter essentials</h2>
+        <p>From cosy knits to practical jackets, we've got you covered this winter
+        </p>
+        <div>
+            <a href="#layers">MEN'S WARM LAYERS</a>
+            <a href="#layers">WOMEN'S WARM LAYERS</a>
+        </div>
+    </div>
+</section>
+
+<section class="sec-3" id="layers">
+  <% for (let category in productsByCategory) { %>
+    <h4 class="m-5" style="font-weight: bold;"><%= category %></h4>
+    <div class="container">
+      <!-- Desktop View -->
+      <div class="row d-none d-lg-flex">
+        <% productsByCategory[category].forEach(product => { %>
+          <div class="col-lg-3">
+            <a href="/product/<%= product._id %>">
+              <img class="img-fluid" style="border-radius: 10px;" src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+              <p><%= product.name %></p>
+            </a>
+          </div>
+        <% }); %>
+      </div>
+
+      <!-- Mobile View -->
+      <div id="carousel-<%= category.replace(/\s/g, '-') %>" class="carousel slide d-lg-none" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% productsByCategory[category].forEach((product, index) => { %>
+            <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+              <a href="/product/<%= product._id %>">
+                <img class="d-block w-100 h-100" style="border-radius: 10px;" src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                <p><%= product.name %></p>
+              </a>
+            </div>
+          <% }) %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= category.replace(/\s/g, '-') %>" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-<%= category.replace(/\s/g, '-') %>" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  <% } %>
+</section>
