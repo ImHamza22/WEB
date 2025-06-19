@@ -1,0 +1,168 @@
+*{
+    font-family: "Open Sans", sans-serif;
+}
+.a-bar {
+    background-color: #242833;
+    color: white;
+    height: 5vh;
+    font-size: 15px;
+}
+/* navbar */
+nav{
+    background-color: #f8f7ed;
+    z-index: 1000;
+}
+.nav-link{
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+.navbar-brand img{
+    width: 130px;
+    height: 40px;
+    
+}
+.full-screen-dropdown {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    background: rgba(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-item:hover .full-screen-dropdown {
+    display: block;
+}
+
+.full-screen-dropdown ul {
+    display: flex;
+    list-style: none; 
+}
+
+.full-screen-dropdown ul li {
+    margin: 10px 50px 0px 0px;
+}
+
+.full-screen-dropdown > ul > li > a {
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+
+}
+.full-screen-dropdown ul li ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+.full-screen-dropdown ul li ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 300;
+}
+.list-item{
+    text-decoration: none;
+    color: inherit;
+}
+/* offcanvas */
+.mobile-menu {
+    background-color: #f8f6ef;
+    padding: 20px;
+}
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-list li {
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+.menu-list li:hover {
+    background-color: #eee;
+}
+.menu-list li a {
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* form */
+.form-container{
+    padding: 3% 20% 3% 20%;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #f8f6ed;
+    padding: 40px 200px;
+}
+
+.footer-container {
+    display: flex;
+    gap: 300px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.social-icons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.bottom {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.bottom a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}

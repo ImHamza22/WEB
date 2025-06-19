@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granson Clothing | Protect all we love</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+
+    <meta name="description"
+        content="Responsibly made clothing inspired by island living. From every day essentials, swimwear, knitwear, and outerwear. Made from natural and recycled materials.">
+    <style>
+        .error-msg {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#eDate").attr("min", new Date().toISOString().split("T")[0]);
+
+            let form = $("#myForm");
+            form.on("submit", function(event) {
+                let isValid = true;
+
+                if (!$("#fname")[0].checkValidity()) {
+                    $("#fnameError").show();
+                    isValid = false;
+                } else {
+                    $("#fnameError").hide();
+                }
+
+                if (!$("#email")[0].checkValidity()) {
+                    $("#emailError").show();
+                    isValid = false;
+                } else {
+                    $("#emailError").hide();
+                }
+
+                if (!$("#password")[0].checkValidity()) {
+                    $("#passwordError").show();
+                    isValid = false;
+                } else {
+                    $("#passwordError").hide();
+                }
+
+                if (!$("#phnNum")[0].checkValidity()) {
+                    $("#phnError").show();
+                    isValid = false;
+                } else {
+                    $("#phnError").hide();
+                }                
+                if (!$("#address")[0].checkValidity()) {
+                    $("#addressError").show();
+                    isValid = false;
+                } else {
+                    $("#addressError").hide();
+                }                
+                if (!$("#ccNum")[0].checkValidity()) {
+                    $("#ccError").show();
+                    isValid = false;
+                } else {
+                    $("#ccError").hide();
+                }                
+                if (!$("#cvv")[0].checkValidity()) {
+                    $("#cvvError").show();
+                    isValid = false;
+                } else {
+                    $("#cvvError").hide();
+                }                
+                if (!$("#eDate")[0].checkValidity()) {
+                    $("#edError").show();
+                    isValid = false;
+                } else {
+                    $("#edError").hide();
+                }
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg justify-content-start position-sticky top-0 px-lg-5">
+        <button class="navbar-toggler nav-menu-btn" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <img src="/assets/Logo.png" alt="LOGO">
+        </a>
+
+        <div class="collapse navbar-collapse" id="">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">WOMEN</a>
+                    <!--Dropdown -->
+                    <div class="full-screen-dropdown p-5">
+                        <ul class="navbar-nav">
+                            <li>
+                                <a href="#">FEATURED</a>
+                                <ul>
+                                    <li><a href="#">New Arrivals</a></li>
+                                    <li><a href="#">Loungewear</a></li>
+                                    <li><a href="#">Bestsellers</a></li>
+                                    <li><a href="#">Warm Layers</a></li>
+                                    <li><a href="#">Unisex</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">CLOTHING</a>
+                                <ul>
+                                    <li><a href="#">View All</a></li>
+                                    <li><a href="#">Plain T-Shirts</a></li>
+                                    <li><a href="#">Graphic T-Shirts</a></li>
+                                    <li><a href="#">Multibuy T-Shirts</a></li>
+                                    <li><a href="#">All T-Shirts &amp; Tops</a></li>
+                                    <li><a href="#">Warm Layers</a></li>
+                                    <li><a href="#">Jackets</a></li>
+                                    <li><a href="#">Hoodies &amp; Sweatshirts</a></li>
+                                    <li><a href="#">Knitwear</a></li>
+                                    <li><a href="#">Shirts</a></li>
+                                    <li><a href="#">Trousers</a></li>
+                                    <li><a href="#">Jumpsuits &amp; Playsuits</a></li>
+                                    <li><a href="#">Swimwear</a></li>
+                                    <li><a href="#">Pyjamas</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">ACCESSORIES</a>
+                                <ul>
+                                    <li><a href="#">View All</a></li>
+                                    <li><a href="#">Beanies</a></li>
+                                    <li><a href="#">Socks &amp; Underwear</a></li>
+                                    <li><a href="#">Robes &amp; Towels</a></li>
+                                    <li><a href="#">Backpacks &amp; Bags</a></li>
+                                    <li><a href="#">Gift Cards</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">PRINT EDITS</a>
+                                <ul>
+                                    <li><a href="#">An Island Winter</a></li>
+                                    <li><a href="#">Millie Sandy Collaboration</a></li>
+                                    <li><a href="#">Off Road</a></li>
+                                    <li><a href="#">Classic Prints</a></li>
+                                    <li><a href="#">Lifestyle Edits</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">SAVE ON ESSENTIALS</a>
+                                <ul>
+                                    <li><a href="#">2 for £60 - Kangaroo Pocket Hoodies</a></li>
+                                    <li><a href="#">3 for £15 - Trainer Socks</a></li>
+                                    <li><a href="#">Multibuy T-Shirts</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MEN</a>
+                    <!--Dropdown -->
+                    <div class="full-screen-dropdown p-5">
+                        <ul class="navbar-nav">
+                            <li>
+                                <a href=""> FEATURED </a>
+                                <ul>
+                                    <li><a href=""> New Arrivals </a></li>
+                                    <li><a href=""> Loungewear </a></li>
+                                    <li><a href=""> Bestsellers </a></li>
+                                    <li><a href=""> Warm Layers </a></li>
+                                    <li><a href=""> Unisex </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""> CLOTHING </a>
+                                <ul>
+                                    <li><a href=""> View All </a></li>
+                                    <li><a href=""> Plain T-Shirts </a></li>
+                                    <li><a href=""> Graphic T-Shirts </a></li>
+                                    <li><a href=""> Multibuy T-Shirts </a></li>
+                                    <li><a href=""> All T-Shirts &amp; Tops </a></li>
+                                    <li><a href=""> Warm Layers </a></li>
+                                    <li><a href=""> Jackets </a></li>
+                                    <li><a href=""> Hoodies &amp; Sweatshirts </a></li>
+                                    <li><a href=""> Knitwear </a></li>
+                                    <li><a href=""> Shirts </a></li>
+                                    <li><a href=""> Trousers </a></li>
+                                    <li><a href=""> Swimwear </a></li>
+                                    <li><a href=""> Pyjamas </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""> ACCESSORIES </a>
+                                <ul>
+                                    <li><a href=""> View All </a></li>
+                                    <li><a href=""> Beanies </a></li>
+                                    <li><a href=""> Socks &amp; Underwear </a></li>
+                                    <li><a href=""> Robes &amp; Towels </a></li>
+                                    <li><a href=""> Backpacks &amp; Bags </a></li>
+                                    <li><a href=""> Gift Cards </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""> PRINT EDITS </a>
+                                <ul>
+                                    <li><a href=""> An Island Winter </a></li>
+                                    <li><a href=""> Millie Sandy Collaboration </a></li>
+                                    <li><a href=""> Off Road </a></li>
+                                    <li><a href=""> Classic Prints </a></li>
+                                    <li><a href=""> Lifestyle Edits </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""> SAVE ON ESSENTIALS </a>
+                                <ul>
+                                    <li><a href=""> 2 for £60 - Kangaroo Pocket Hoodies </a></li>
+                                    <li><a href=""> 3 for £20 - Organic Cotton Boxers </a></li>
+                                    <li><a href=""> Multibuy T-Shirts </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">RECYCLE</a>
+                    <!-- Full-Screen Dropdown -->
+                    <div class="full-screen-dropdown p-5">
+                        <ul class="navbar-nav">
+                            <li>
+                                <a href=""> RECYCLE </a>
+                                <ul>
+                                    <li><a href=""> Recycle Your Clothes </a></li>
+                                    <li><a href=""> Shop Recycled </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">PERSONALISED</a>
+                    <!-- Full-Screen Dropdown -->
+                    <div class="full-screen-dropdown p-5">
+                        <ul class="navbar-nav">
+                            <li>
+                                <a href=""> PERSONALISED </a>
+                                <ul>
+                                    <li><a href=""> Shop Personalised </a></li>
+                                    <li><a href=""> Shop Men's Personalised </a></li>
+                                    <li><a href=""> Shop Women's Personalised </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""> MEN'S PERSONALISED </a>
+                                <ul>
+                                    <li><a href=""> All Personalised Clothing </a></li>
+                                    <li><a href=""> Men's Personalised T-Shirt </a></li>
+                                    <li><a href=""> Men's Personalised Hoodie </a></li>
+                                    <li><a href=""> Men's Personalised Sweatshirt </a></li>
+                                    <li><a href=""> Men's Personalised Vest Top </a></li>
+                                    <li><a href=""> Men's Personalised Oversized Tee </a></li>
+                                    <li><a href=""> Men's Personalised Longline T-Shirt </a></li>
+                                    <li><a href=""> Personalised Tote Bag </a></li>
+                                    <li><a href=""> Shop More </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""> WOMEN'S PERSONALISED </a>
+                                <ul>
+                                    <li><a href=""> All Personalised Clothing </a></li>
+                                    <li><a href=""> Women's Personalised T-Shirt </a></li>
+                                    <li><a href=""> Women's Personalised Boxy Tee </a></li>
+                                    <li><a href=""> Women's Personalised Vest Top </a></li>
+                                    <li><a href=""> Women's Personalised Hoodie </a></li>
+                                    <li><a href=""> Women's Personalised Oversized Tee </a></li>
+                                    <li><a href=""> Women's Personalised Boxy Jumper </a></li>
+                                    <li><a href=""> Personalised Tote Bag </a></li>
+                                    <li><a href=""> Shop More </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">STORIES</a>
+                    <!-- Full-Screen Dropdown -->
+                    <div class="full-screen-dropdown p-5">
+                        <ul class="navbar-nav">
+                            <li>
+                                <a href=""> OUR STORY </a>
+                                <ul>
+                                    <li><a href=""> Our Story </a></li>
+                                    <li><a href=""> Our Pursuit </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""> COMMUNITY </a>
+                                <ul>
+                                    <li><a href=""> All Stories </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""> TOP STORIES </a>
+                                <ul>
+                                    <li><a href=""> Finding joy in the chill with Bryony </a></li>
+                                    <li><a href=""> Let's Take Back Friday </a></li>
+                                    <li><a href=""> Tales from Eryri </a></li>
+                                    <li><a href=""> In Pursuit of Clean Seas </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="container d-flex justify-content-end align-items-center">
+                <div class="nav-item dropdown">
+                    <a class="list-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        United Kingdom | GBP £
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <form class="d-flex" role="search">
+                    <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                </form>
+                <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20"
+                        height="20" viewBox="0 0 50 50" fill="currentColor" fill-rule="evenodd">
+                        <path
+                            d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z">
+                        </path>
+                    </svg></button>
+                <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50"
+                        viewBox="0 0 50 40">
+                        <path
+                            d="m15.75 11.8h-3.16l-.77 11.6a5 5 0 0 0 4.99 5.34h7.38a5 5 0 0 0 4.99-5.33l-.78-11.61zm0 1h-2.22l-.71 10.67a4 4 0 0 0 3.99 4.27h7.38a4 4 0 0 0 4-4.27l-.72-10.67h-2.22v.63a4.75 4.75 0 1 1 -9.5 0zm8.5 0h-7.5v.63a3.75 3.75 0 1 0 7.5 0z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+            </div>
+            </button>
+        </div>
+    </nav>
+    <div class="offcanvas offcanvas-start mobile-menu" tabindex="-1" id="mobileMenu" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="menu-list">
+                <li><a href="#">WOMEN <span>→</span></a></li>
+                <li><a href="#">MEN <span>→</span></a></li>
+                <li><a href="#">RECYCLE <span>→</span></a></li>
+                <li><a href="#">PERSONALISED <span>→</span></a></li>
+                <li><a href="#">STORIES <span>→</span></a></li>
+            </ul>
+        </div>
+    </div>
+    </section>
+    <!-- form -->
+    <section class="form-container">
+        <div class="container">
+            <form action="" class="row g-3" id="myForm" novalidate>
+                <h1 class="text-center">Checkout</h1>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="fname" placeholder="Your Name" pattern="^[A-Za-z\s]+$" 
+                        required>
+                    <label for="fname">Full Name</label>
+                    <span class="error-msg" id="fnameError">Name must be non-empty alphabatic.</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                    <label for="email">Email address</label>
+                    <span class="error-msg" id="emailError">Enter a valid email address.</span>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required minlength="3">
+                    <label for="password">Password</label>
+                    <span class="error-msg" id="passwordError">Passwrd must be 3 digits long.</span>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="phnNum" placeholder="Phone Number" pattern="[0-9]"
+                            minlength="10" maxlength="10" required>
+                        <label for="phnNum">Phone number</label>
+                        <span class="error-msg" id="phnError">Phone Number must be numeric 10 digits.</span>
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Your complete address" id="address" required></textarea>
+                    <label for="address">Address</label>
+                    <span class="error-msg" id="addressError">Address is required.</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="ccNum" placeholder="Credit Number" pattern="[0-9]" minlength="15" maxlength="16" required>
+                    <label for="cNum">Credit card number</label>
+                    <span class="error-msg" id="ccError">Must be 16 digits, only numbers allowed.</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="eDate" placeholder="" required>
+                    <label for="eDate">Expiry Date</label>
+                    <span class="error-msg" id="edError">Must be a valid future date.</span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="cvv" placeholder="CVV" pattern="[0-9]" minlength="3"
+                        maxlength="3" required>
+                    <label for="cvv">CVV</label>
+                    <span class="error-msg" id="cvvError">Must be exactly 3 digits.</span>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Menu</h3>
+                <ul>
+                    <li><a href="">Women</a></li>
+                    <li><a href="">Men</a></li>
+                    <li><a href="">Recycle</a></li>
+                    <li><a href="">Stories</a></li>
+                    <li><a href="">Sale</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="">Wholesale</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Help Center</a></li>
+                    <li><a href="">Sizing Guide</a></li>
+                    <li><a href="">Delivery</a></li>
+                    <li><a href="">Returns & Exchanges</a></li>
+                    <li><a href="">Sitemap</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Use</a></li>
+                    <li><a href="">Terms of Sale</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                    viewBox="0 0 30 30">
+                    <path
+                        d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z">
+                    </path>
+                </svg></a>
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                    viewBox="0 0 26 26">
+                    <path
+                        d="M 7.546875 0 C 3.390625 0 0 3.390625 0 7.546875 L 0 18.453125 C 0 22.609375 3.390625 26 7.546875 26 L 18.453125 26 C 22.609375 26 26 22.609375 26 18.453125 L 26 7.546875 C 26 3.390625 22.609375 0 18.453125 0 Z M 7.546875 2 L 18.453125 2 C 21.527344 2 24 4.46875 24 7.546875 L 24 18.453125 C 24 21.527344 21.53125 24 18.453125 24 L 7.546875 24 C 4.472656 24 2 21.53125 2 18.453125 L 2 7.546875 C 2 4.472656 4.46875 2 7.546875 2 Z M 20.5 4 C 19.671875 4 19 4.671875 19 5.5 C 19 6.328125 19.671875 7 20.5 7 C 21.328125 7 22 6.328125 22 5.5 C 22 4.671875 21.328125 4 20.5 4 Z M 13 6 C 9.144531 6 6 9.144531 6 13 C 6 16.855469 9.144531 20 13 20 C 16.855469 20 20 16.855469 20 13 C 20 9.144531 16.855469 6 13 6 Z M 13 8 C 15.773438 8 18 10.226563 18 13 C 18 15.773438 15.773438 18 13 18 C 10.226563 18 8 15.773438 8 13 C 8 10.226563 10.226563 8 13 8 Z">
+                    </path>
+                </svg></a>
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                    viewBox="0 0 50 50">
+                    <path
+                        d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z">
+                    </path>
+                </svg></a>
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                    viewBox="0,0,256,256">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.33333,5.33333)">
+                            <path
+                                d="M20,37c2.761,0 5,-2.239 5,-5v-1v-1v-23.93h5.208c-0.031,-0.14 -0.072,-0.276 -0.097,-0.419h-0.001c-0.044,-0.248 -0.076,-0.495 -0.099,-0.746v-0.835h-7.011v23.93v1v1c0,2.761 -2.239,5 -5,5c-0.864,0 -1.665,-0.239 -2.375,-0.625c0.848,1.556 2.478,2.625 4.375,2.625z"
+                                fill-opacity="0.81961" fill="#000000"></path>
+                            <path
+                                d="M33.718,11.407c-0.797,-1.094 -1.364,-2.367 -1.607,-3.756h-0.001c-0.044,-0.248 -0.076,-0.495 -0.099,-0.746v-0.835h-1.803c0.491,2.182 1.761,4.062 3.51,5.337z"
+                                fill="#030303"></path>
+                            <path
+                                d="M18,25c-2.761,0 -5,2.239 -5,5c0,1.897 1.069,3.527 2.625,4.375c-0.386,-0.71 -0.625,-1.511 -0.625,-2.375c0,-2.761 2.239,-5 5,-5c0.343,0 0.677,0.035 1,0.101v-7.05c-0.331,-0.028 -0.662,-0.051 -1,-0.051c-0.338,0 -0.669,0.023 -1,0.05v5.05c-0.323,-0.065 -0.657,-0.1 -1,-0.1z"
+                                fill="#030303"></path>
+                            <path
+                                d="M36.257,13.783c0.867,0.541 1.819,0.908 2.806,1.131v-0.376v-0.002v-1.381c-1.7,0.003 -3.364,-0.473 -4.806,-1.373c-0.186,-0.116 -0.361,-0.247 -0.538,-0.376c0.687,0.945 1.544,1.757 2.538,2.377z"
+                                fill-opacity="0.81961" fill="#000000"></path>
+                            <path
+                                d="M19,20.05v-2c-0.331,-0.027 -0.662,-0.05 -1,-0.05c-6.627,0 -12,5.373 -12,12c0,3.824 1.795,7.222 4.581,9.419c-1.612,-2.042 -2.581,-4.615 -2.581,-7.419c0,-6.29 4.842,-11.44 11,-11.95z"
+                                fill-opacity="0.81961" fill="#000000"></path>
+                            <path
+                                d="M39.062,14.914v4.733c-3.375,0 -6.501,-1.071 -9.052,-2.894l0.003,13.247l-0.014,-0.018c0,0.006 0.001,0.012 0.001,0.018c0,6.627 -5.373,12 -12,12c-2.804,0 -5.377,-0.969 -7.419,-2.581c2.197,2.786 5.595,4.581 9.419,4.581c6.627,0 12,-5.373 12,-12c0,-0.006 -0.001,-0.012 -0.001,-0.018l0.014,0.018l-0.002,-13.248c2.551,1.823 5.677,2.894 9.052,2.894v-5.108v-0.002v-1.381c-0.678,0.002 -1.346,-0.094 -2.001,-0.241z"
+                                fill="#030303"></path>
+                            <path
+                                d="M30,30c0,-0.006 -0.001,-0.012 -0.001,-0.018l0.014,0.018l-0.002,-13.248c2.551,1.823 5.677,2.894 9.052,2.894v-4.733c-0.987,-0.223 -1.939,-0.59 -2.806,-1.131c-0.994,-0.62 -1.851,-1.432 -2.538,-2.376c-1.75,-1.275 -3.019,-3.155 -3.51,-5.337h-5.209v23.931v1v1c0,2.761 -2.239,5 -5,5c-1.897,0 -3.527,-1.069 -4.375,-2.625c-1.556,-0.848 -2.625,-2.478 -2.625,-4.375c0,-2.761 2.239,-5 5,-5c0.343,0 0.677,0.035 1,0.101v-5.05c-6.158,0.509 -11,5.659 -11,11.949c0,2.804 0.969,5.377 2.581,7.419c2.042,1.612 4.615,2.581 7.419,2.581c6.627,0 12,-5.373 12,-12z"
+                                fill="#000000"></path>
+                        </g>
+                    </g>
+                </svg></a>
+        </div>
+    </footer>
+    <div class="bottom">
+        <a href="">Contact</a>
+        <a href="">Careers</a>
+        <a href="">Affiliates</a>
+        <a href="">Sitemap</a>
+        <a href="">Terms</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

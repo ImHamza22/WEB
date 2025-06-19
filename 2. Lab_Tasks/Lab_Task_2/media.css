@@ -1,0 +1,28 @@
+@media only screen  and (max-width:992px){
+    .nav-menu-btn{
+        position: relative;
+        top: 3;
+        left: 0;
+        border: 0px;
+    }
+    .navbar-brand{
+        width: 80%;
+        text-align: center;
+    }
+    
+}
+
+@media only screen and (min-width:575px) and (max-width:992px){
+    .footer-container {
+        gap: 150px;      
+    }
+}
+
+@media only screen and (max-width:575px){
+    .mobile-menu {
+        width: 100% !important;
+    }
+    .h-large{
+        font-size: 1.3rem;
+    }
+}
